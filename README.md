@@ -429,7 +429,7 @@ Unhealthy system, one appliance in operation
 
 <b>Datastore 'AnalyzerData': </b> Holds all vital sign tresholds and minimal trend data for analyzing purposes
 
-![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
+![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
 
 #### Analyzer flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
@@ -474,14 +474,11 @@ The dashboard is divided in 2 sections, one for showing patient information and 
 
 ###### NursesStation Mockup placeholder (WIP)
     
-### C4 - Container design - New node Auto-configuration flow
+### New node Auto-configuration 
 
 <b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
 
-
-![Level 2 MonitorMe NFR role](/Resources/Level%202%20-%20MonitorMe%20Coordinator%20AutoConfig%20flow.png)
-
-#### Auto-configuration sequence flow
+##### Auto-configuration sequence flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
 
 
