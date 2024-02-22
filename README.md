@@ -43,7 +43,7 @@ StayHealthy, Inc. is a large and highly successful ${\color{red}medical\ softwar
 
 StayHealthy, Inc. is now expanding into the medical monitoring market and needs a ${\color{red}new\ medical\ patient\ monitoring\ system\ for\ hospitals}$ that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
 
-[!note]
+[!NOTE]
 MonitorMe will be the new medical patient monitoring system for hospitals
 
 ### MonitorMe requirements
@@ -163,7 +163,7 @@ Vital sign data analyzed and recorded through MonitorMe must be as accurate as p
   As this is a new line of business for StayHealthy, they expect a lot of change as they learn more about this new market
   </td>
   <td>
-
+  
 - Allow for easy upgrades
 - Systems needs to be working 24/7, so rolling upgrade support if possible, no downtime
 
@@ -175,8 +175,8 @@ Vital sign data analyzed and recorded through MonitorMe must be as accurate as p
   </td>
   <td>
 
-- MonitorMe handles patient data, so secure storage and role-based access required
-- Auditing on snapshot functionality
+    - MonitorMe handles patient data, so secure storage and role-based access required
+    - Auditing on snapshot functionality
 
   </td>
   </tr>
@@ -190,6 +190,7 @@ Based on the above requirements table we came up with these 7 Driving characteri
 
 ![Architectural Characteristics](/Resources/2024%20CoolProfs%20-%20Architecture%20Katas.jpg)
 
+[!NOTE]
 To ensure 24/7 correct simultaneous analysis of patient vital sign we have chosen Concurrency, Availability and Data Integrity as our top 3 Driving Architecture Characteristics
 
 <table>
@@ -290,10 +291,8 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
   
   </td>
   </tr>
-  <tr>
-  <td>
-  </td>
-  <td>
-  </td>
-  </tr>
+  </tbody>
+</table>
+
+
 
