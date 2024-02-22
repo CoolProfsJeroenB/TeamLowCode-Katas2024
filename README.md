@@ -187,7 +187,7 @@ Vital sign data analyzed and recorded through MonitorMe must be as accurate as p
 
 Based on the above requirements table we came up with these 7 Driving characteristics:
 
-![Architectural Characteristics] (/Resources/2024 CoolProfs - Architecture Katas.jpg)
+![Architectural Characteristics](/Resources/2024%20CoolProfs%20-%20Architecture%20Katas.jpg)
 
 <table>
   <thead>
