@@ -2,6 +2,8 @@
 
 
 ## Team members
+
+
     - Joachim VandeCasteele (Solution Architect / Principal consultant)
     - Shahin Keshavari (Senior consultant)
     - Job Bezemer (Junior consultant)
@@ -14,6 +16,7 @@
     <!-- TOC -->
     * [Welcome](#welcome)
     * [Presenting our solution](#solution)
+        * [The business problem of StayHealthy Inc.](#the-business-problem-of-StayHealthy-Inc.)
     <!-- TOC -->
 
 ## Welcome
@@ -37,7 +40,7 @@ StayHealthy, Inc. is a large and highly successful <span style="color:red">medic
 
 - MyMedicalData is a comprehensive cloud-based <span style="color:red">patient medical records system</span> used by doctors, nurses, and other health professionals to <span style="color:red">record and track a patients health records</span> with guaranteed partitioning between patient records.
 
-[actors](Resources\Pictures\arctors.png)
+<img style="width:50px">![actors](Resources\actors.png)</img>
 
 StayHealthy, Inc. is now expanding into the medical monitoring market, and is in need of a <span style="color:red">new medical patient monitoring system for hospitals</span> that monitors a patients vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
 
