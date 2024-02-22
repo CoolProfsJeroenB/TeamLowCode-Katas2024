@@ -33,17 +33,18 @@ In our work, we do not only design it we also build and implement it. To help ou
 
 ### The business problem
 
-StayHealthy, Inc. is a large and highly successful ${\color{red}medical software company}$ located in San Francisco, California, US. They currently have ${\color{red}2 popular cloud-based SAAS products}$: 
+StayHealthy, Inc. is a large and highly successful ${\color{red}medical\ software\  company}$ located in San Francisco, California, US. They currently have ${\color{red}2\  popular\ cloud-based\ SAAS\ products}$: 
 
-- MonitorThem is a comprehensive $${\color{red}data analytics platform that is used for hospital trend and performance analytics}$$—alert response times, patient health problem analytics, patient recovery analysis, and so on.
+- MonitorThem is a comprehensive ${\color{red}data\ analytics\ platform\ that\ is\ used\ for\ hospital\ trend\ and\ performance\ analytics}$—alert response times, patient health problem analytics, patient recovery analysis, and so on.
 
-- MyMedicalData is a comprehensive cloud-based $${\color{red}patient medical records system}$$ used by doctors, nurses, and other health professionals to $${\color{red}record and track a patient's health records}$$ with guaranteed partitioning between patient records.
+- MyMedicalData is a comprehensive cloud-based ${\color{red}patient\ medical\ records\ system}$ used by doctors, nurses, and other health professionals to ${\color{red}record\ and\ track\ a\ patient's\ health\ records}$ with guaranteed partitioning between patient records.
 
 
 
-StayHealthy, Inc. is now expanding into the medical monitoring market and needs a $${\color{red}new medical patient monitoring system for hospitals}$$ that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
+StayHealthy, Inc. is now expanding into the medical monitoring market and needs a ${\color{red}new\ medical\ patient\ monitoring\ system\ for\ hospitals}$ that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
 
-#### - MonitorMe will be the new medical patient monitoring system for hospitals
+[!note]
+MonitorMe will be the new medical patient monitoring system for hospitals
 
 ### MonitorMe requirements
 
@@ -64,7 +65,7 @@ StayHealthy, Inc. is now expanding into the medical monitoring market and needs 
 - There is a maximum of 20 patients per nurses station.
     </td>
     <td>
-    
+
     - Send data <= 1 sec to Monitoring screen on Nurses station. 
     - Rotating Monitoring screen every 5 seconds on Nurses station 
     - Max 20 patient per Nurses stations 
