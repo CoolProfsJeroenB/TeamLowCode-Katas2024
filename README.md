@@ -432,9 +432,9 @@ sequenceDiagram
     participant Worker
     Participant VitalAnalyzer
     Participant PatientCycler
-    Participant VitalSignManager
     Participant PushEngine
     Participant DashboardEngine
+    Participant StayHealthyMobileApp
     Participant NurseStation
     end
 
@@ -443,22 +443,18 @@ sequenceDiagram
     alt isAlert
         VitalAnalyzer->>PatientCycler: Send Anomaly
         Note over PatientCycler: enrich alert with NurseStation/PatientInfo
-        PatientCycler->>VitalSignManager: Send CycleOverride
-        Note over VitalSignManager: Why this step??
-        VitalSignManager->>PushEngine: Send alert to mobile
-        VitalSignManager->>DashboardEngine: Send alert
-        DashboardEngine->>NurseStation: Send alert
+        PatientCycler->>PushEngine: Send alert 
+        PatientCycler->>DashboardEngine: Send alert 
+        PushEngine->>StayHealthyMobileApp: Send alert to mobile app
+        DashboardEngine->>NurseStation: Send alert to NurseStation
         Note over NurseStation: Show alert
     end
+```
+
+#### Display alert on Nursestation 
+
 
     
-
-
-
-
-
-
-```
 #### C4 - Container design - New node Auto-configuration flow
 
 <b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
