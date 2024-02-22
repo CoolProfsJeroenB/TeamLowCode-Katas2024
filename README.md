@@ -31,11 +31,19 @@ In our work we do not only design it we also build and implement it. To help our
 
 ### The business problem of StayHealthy Inc.
 
-StayHealthy, Inc. is a large and highly successful medical software company located in San Francisco, California, US. They currently have 2 popular cloud-based SAAS products: 
+StayHealthy, Inc. is a large and highly successful <span style="color:red">medical software company</span> located in San Francisco, California, US. They currently have <span style="color:red">2 popular cloud-based SAAS products</span>: 
 
-MonitorThem a comprehensive data analytics platform that is used for hospital trend and performance analytics—alert response times, patient health problem analytics, patient recovery analysis, and so on.
+- MonitorThem a comprehensive <span style="color:red">data analytics platform that is used for hospital trend and performance analytics</span>—alert response times, patient health problem analytics, patient recovery analysis, and so on.
 
-MyMedicalData is a comprehensive cloud-based patient medical records system used by doctors, nurses, and other health professionals to record and track a patients health records with guaranteed partitioning between patient records.
+- MyMedicalData is a comprehensive cloud-based <span style="color:red">patient medical records system</span> used by doctors, nurses, and other health professionals to <span style="color:red">record and track a patients health records</span> with guaranteed partitioning between patient records.
 
-StayHealthy, Inc. is now expanding into the medical monitoring market, and is in need of a new medical patient monitoring system for hospitals that monitors a patients vital signs using proprietary medical monitoring devices built by StayHealthy, Inc.
+[actors](Resources\Pictures\arctors.png)
+
+StayHealthy, Inc. is now expanding into the medical monitoring market, and is in need of a <span style="color:red">new medical patient monitoring system for hospitals</span> that monitors a patients vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
+
+- MonitorMe will be the new medical patient monitoring system for hospitals 
+
+### MonitorMe requirements
+
+
 
