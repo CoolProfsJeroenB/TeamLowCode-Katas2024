@@ -453,7 +453,11 @@ sequenceDiagram
 
 #### Display alert on Nursestation 
 
+Description: Dashboard is connected through webhooks to MonitorMe, This allows for direct communication from MonitorMe to the Dashboard and instant showing of alerts. 
 
+The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a seperate part of the screen we will reserve room for displaying alerts when they occur. Both are seperate events to keep the logic simple.
+
+###### Mockup?
     
 #### C4 - Container design - New node Auto-configuration flow
 
