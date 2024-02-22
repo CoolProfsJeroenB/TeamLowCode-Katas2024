@@ -406,12 +406,59 @@ Unhealthy system, one appliance in operation
 
 #### C4 - Container design - Based on Coordinator role
 
+<b>Purpose: </b>
+
 ![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
 
 #### C4 - Container design - Based on Analyzer role
 
+<b>Purpose: </b> Analyze all vital signs with configured thresholds or stored trend data. 
+
+<b>Datastore 'AnalyzerData': </b> Holds all vital sign tresholds and minimal trend data for analyzing purposes
+
 ![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
 
+##### Analyzer flow
+For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
+
+``` mermaid
+sequenceDiagram
+    box rgb(240,240,240,0.2) MonitorMe_Node_A_Coordinator
+     participant NodeCoordinator
+    end
+
+    box rgb(200,200,240,0.2) MonitorMe_Node_New
+    participant Discover
+    participant Worker
+    Participant VitalAnalyzer
+    Participant PatientCycler
+    Participant VitalSignManager
+    Participant PushEngine
+    Participant DashboardEngine
+    Participant NurseStation
+    end
+
+    NodeCoordinator->>Worker: Send vital sign for role Analyzer
+    Worker->>VitalAnalyzer: Process vitalsign
+    alt isAlert
+        VitalAnalyzer->>PatientCycler: Send Anomaly
+        Note over PatientCycler: enrich alert with NurseStation/PatientInfo
+        PatientCycler->>VitalSignManager: Send CycleOverride
+        Note over VitalSignManager: Why this step??
+        VitalSignManager->>PushEngine: Send alert to mobile
+        VitalSignManager->>DashboardEngine: Send alert
+        DashboardEngine->>NurseStation: Send alert
+        Note over NurseStation: Show alert
+    end
+
+    
+
+
+
+
+
+
+```
 #### C4 - Container design - New node Auto-configuration flow
 
 <b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
@@ -420,6 +467,8 @@ Unhealthy system, one appliance in operation
 ![Level 2 MonitorMe NFR role](/Resources/Level%202%20-%20MonitorMe%20Coordinator%20AutoConfig%20flow.png)
 
 ##### Auto-configuration sequence flow
+For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
+
 
 ``` mermaid
 sequenceDiagram
