@@ -33,15 +33,15 @@ In our work, we do not only design it we also build and implement it. To help ou
 
 ### The business problem
 
-StayHealthy, Inc. is a large and highly successful <span style="color:red">medical software company</span> located in San Francisco, California, US. They currently have <span style="color:red">2 popular cloud-based SAAS products</span>: 
+StayHealthy, Inc. is a large and highly successful ${\color{red}medical software company}$ located in San Francisco, California, US. They currently have ${\color{red}2 popular cloud-based SAAS products}$: 
 
-- MonitorThem is a comprehensive <span style="color:red">data analytics platform that is used for hospital trend and performance analytics</span>—alert response times, patient health problem analytics, patient recovery analysis, and so on.
+- MonitorThem is a comprehensive $${\color{red}data analytics platform that is used for hospital trend and performance analytics}$$—alert response times, patient health problem analytics, patient recovery analysis, and so on.
 
-- MyMedicalData is a comprehensive cloud-based <span style="color:red">patient medical records system</span> used by doctors, nurses, and other health professionals to <span style="color:red">record and track a patient's health records</span> with guaranteed partitioning between patient records.
+- MyMedicalData is a comprehensive cloud-based $${\color{red}patient medical records system}$$ used by doctors, nurses, and other health professionals to $${\color{red}record and track a patient's health records}$$ with guaranteed partitioning between patient records.
 
 
 
-StayHealthy, Inc. is now expanding into the medical monitoring market and needs a <span style="color:red">new medical patient monitoring system for hospitals</span> that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
+StayHealthy, Inc. is now expanding into the medical monitoring market and needs a $${\color{red}new medical patient monitoring system for hospitals}$$ that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
 
 #### - MonitorMe will be the new medical patient monitoring system for hospitals
 
@@ -189,6 +189,8 @@ Based on the above requirements table we came up with these 7 Driving characteri
 
 ![Architectural Characteristics](/Resources/2024%20CoolProfs%20-%20Architecture%20Katas.jpg)
 
+To ensure 24/7 correct simultaneous analysis of patient vital sign we have chosen Concurrency, Availability and Data Integrity as our top 3 Driving Architecture Characteristics
+
 <table>
   <thead>
     <tr>
@@ -199,9 +201,98 @@ Based on the above requirements table we came up with these 7 Driving characteri
   <tbody>
   <tr>
   <td>
+  $${\color{red}Concurrency}$$  
+  </td>
+  <td>
+MonitorMe will be receiving a lot of data for every vital sign from the patients. It is crucial that incoming data gets processed simultaneously so alerts can be sent in the quickest time possible when required to enable fast response times
+
+<br>Requirements:
+
+- analyze each patient’s vital signs
+- Issue alert a medical professional
+- Trend or threshold  (+ device failure)
+- More vital sign monitoring devices​
+
+  </td>
+  </tr>
+<tr>
+  <td>
+  $${\color{red}Availability}$$
+  </td>
+  <td>
+  Patients need to be monitored 24/7 and if problems arise MonitorMe must be able to act. Therefore, the system needs to be always available and working
+
+  <br>Requirements:
+
+  - Store all vital sign reading for past 24 hr
+  - View history, filter on time + vital sign
+  - Has to be available 24/7 
+  
+  </td>
+  </tr>
+  <tr>
+  <td>
+  $${\color{red}Data Integrity}$$
+  </td>
+  <td>
+  Data loss can be disastrous, especially if that data would trigger any alerts if it were to be analyzed. Data Integrity must be maintained to ensure correct data analysis
+
+  <br>Requirements:
+
+  - Store all vital sign reading for past 24 hr
+  - View history, filter on time + vital sign
+  - As accurate measurements as possible
+  - Trend and threshold analysis is dependent on status awake or asleep 
+  
+  </td>
+  </tr>
+  <tr>
+  <td>
+  Performance and Responsiveness
+  </td>
+  <td>
+  MonitorMe needs to have a high level of performance and responsiveness to provide real-time updates, alerts and a continuous stream of data. This will ensure a quick response time when emergencies arise and every second counts
+
+  <br>Requirements:
+
+  - Send data <= 1 sec to Monitoring screen on Nurses station
+  - Rotating Monitoring screen every 5 seconds on Nurses station 
+  - View history, filter on time + vital sign
+  
+  </td>
+  </tr>
+<tr>
+  <td>
+  Fault Tolerance
+  </td>
+  <td>
+  Partial system errors should be noticed, isolated and shouldn't impact the other systems. This helps to keep partially monitoring patients if at any time errors occur
+
+  <br>Requirement: 
+
+  - MonitorMe must still function if a device or software fails. 
+  
+  </td>
+  </tr>
+  <tr>
+  <td>
+    Security
+  </td>
+  <td>
+  Security is always important but since we are dealing with medical patient data it is even more a necessity to safeguard this
+
+  <br>Requirements:
+
+- Generate holistic snapshots at any of consolidated vital signs
+- Upload snapshot to MyMedicalData via secure HTTP API call
+- Patient data must be secure
+  
+  </td>
+  </tr>
+  <tr>
+  <td>
   </td>
   <td>
   </td>
-
-
+  </tr>
 
