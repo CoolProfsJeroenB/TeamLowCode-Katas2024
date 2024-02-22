@@ -19,7 +19,9 @@
   * [MonitorMe requirements](#monitorme-requirements)
 * [Architecture Characteristics](#architecture-characteristics)
   * [Architecture style decision](#architecture-style-decision)
-* [Solution](#distributed-system-with-event-driven-architecture)    
+* [Distributed system with event-driven design](#distributed-system-with-event-driven-architecture) 
+  * [C4 - System design]  
+  * [C4 - Container design]
 
 <!-- TOC -->
 
@@ -390,11 +392,27 @@ Unhealthy system, one appliance in operation
   </td>
   <td>
 
-- Node 1: Coordinator & Analyzer
+- Node 1: Analyzer
   </td>
   </tr>
   </tbody>
 </table>
+
+#### C4 - System design
+
+![Context diagram MonitorMe](/Resources/Context%20Diagram%20MonitorMe%20.png)
+
+#### C4 - Container design - Based on Coordinator role
+
+![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
+
+#### C4 - Container design - Based on Analyser role
+
+![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
+
+#### C4 - Container design - Non functional flow for auto-discovery and auto-configuration
+
+![Level 2 MonitorMe NFR role](/Resources/Level%202%20-%20MonitorMe%20Coordinator%20AutoConfig%20flow.png)
 
 
 
