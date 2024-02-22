@@ -331,7 +331,8 @@ Based on the above we came up with a distributed system, see drawing:
 
 ![Distributed system](/Resources/Distributed%20System.jpg)
 
-[!NOTE] Each Node is one MonitorMe appliance
+> [!NOTE]
+> Each Node is one MonitorMe appliance
 
 We accepted the additional NFR effort that a distributed system requires, such as:
 
@@ -353,7 +354,8 @@ With these features in place we can garantuee the following to our customers:
 
 ### Distributed system with event-driven architecture
 
-[!NOTE] Node = 1 MonitorMe appliance
+> [!NOTE] 
+> Node = 1 MonitorMe appliance
 
 One MonitorMe system exists out of a minimum of 3 identical appliances.
 Each appliance will behave based on its assigned role. 
@@ -418,7 +420,9 @@ Unhealthy system, one appliance in operation
 
 ![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
 
-[!NOTE] Vital analyzer is always storing vital signs (short term) for trend analysis. Left flow out for readability
+
+> [!NOTE]
+> Vital analyzer is always storing vital signs (short term) for trend analysis. Left flow out for readability
 
 ###### Sequence flow for Coordinator & Monitor is Work in Progress
 
