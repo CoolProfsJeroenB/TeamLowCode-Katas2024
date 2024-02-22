@@ -16,6 +16,11 @@
 * [Welcome](#welcome)
 * [Presenting our solution](#solution)
   * [The business problem](#the-business-problem)
+  * [MonitorMe requirements](#monitorme-requirements)
+* [Architecture Characteristics](#architecture-characteristics)
+  * [Architecture style decision](#architecture-style-decision)
+* [Solution](#distributed-system-with-event-driven-architecture)    
+
 <!-- TOC -->
 
 ## Welcome
@@ -183,7 +188,7 @@ Vital sign data analyzed and recorded through MonitorMe must be as accurate as p
 </table>
 
 
-### Architecture Characteristics
+## Architecture Characteristics
 
 Based on the above requirements table we came up with these 7 Driving characteristics:
 
@@ -292,7 +297,7 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
   </tbody>
 </table>
 
-### Architecture style decision
+## Architecture style decision
 
 For our software architecture we decided on 'Event-Driven'. 
 
@@ -343,8 +348,8 @@ With these features in place we can garantuee the following to our customers:
 [!NOTE] Node = 1 MonitorMe appliance
 
 One MonitorMe system exists out of a minimum of 3 identical appliances.
-Each appliance will behave based on its assigned role
-For MonitorMe we have these roles:
+Each appliance will behave based on its assigned role. 
+<br><br>For MonitorMe we have these roles:
 
 - Coordinator (non functional role)
 - Monitor (feeding nurses station with patient's vital signs)
@@ -390,16 +395,6 @@ Unhealthy system, one appliance in operation
   </tr>
   </tbody>
 </table>
-
-
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
 
 
 
