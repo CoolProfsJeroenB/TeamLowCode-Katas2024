@@ -3,11 +3,13 @@
 
 ## Team members
 
+From left to right:
+    - Jeroen Bezemer (CTO / Principal consultant)
     - Joachim VandeCasteele (Solution Architect / Principal consultant)
     - Shahin Keshavari (Senior consultant)
     - Job Bezemer (Junior consultant)
     - Brian de Bruijn (Medior consultant)
-    - Jeroen Bezemer (CTO / Principal consultant)
+        
 
 ![Team](/Resources/Team.png)
 
