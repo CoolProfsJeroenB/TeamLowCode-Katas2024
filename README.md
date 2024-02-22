@@ -400,22 +400,60 @@ Unhealthy system, one appliance in operation
 
 #### C4 - System design
 
-![Context diagram MonitorMe](/Resources/Context%20Diagram%20MonitorMe%20.png)
+![Context diagram MonitorMe](/Resources/Context%20Diagram%20MonitorMe.png)
+
+
 
 #### C4 - Container design - Based on Coordinator role
 
 ![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
 
-#### C4 - Container design - Based on Analyser role
+#### C4 - Container design - Based on Analyzer role
 
 ![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
 
-#### C4 - Container design - Non functional flow for auto-discovery and auto-configuration
+#### C4 - Container design - New node Auto-configuration flow
+
+<b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
+
 
 ![Level 2 MonitorMe NFR role](/Resources/Level%202%20-%20MonitorMe%20Coordinator%20AutoConfig%20flow.png)
 
+##### Auto-configuration sequence flow
 
+``` mermaid
+sequenceDiagram
+    box rgb(240,240,240,0.2) MonitorMe_Node_A_Coordinator
+     participant NodeCoordinator
+    end
 
+    box rgb(200,200,240,0.2) MonitorMe_Node_New
+    participant Discover
+    participant Worker
+    Participant PatientCycler
+    Participant VitalAnalyzer
+    Participant VitalSignManager
+    end
 
-
-
+    Discover->>NodeCoordinator: Announcement new Node
+    NodeCoordinator->>Worker: Send configuration (Appliance config)
+    Worker->>Discover: Applies configuration (Appliance config)
+    Discover->>NodeCoordinator: Announcement ready for sync 'NurseStation Metadata'
+    NodeCoordinator->>Worker: Send 'NurseStation Metadata'
+    Worker->>PatientCycler: Stores 'NurseStation Metadata'
+    PatientCycler->>Discover: Ready to cycle patients
+    Discover->>NodeCoordinator: Announcement ready for sync 'Analyzer config'
+    NodeCoordinator->>Worker: Send 'analyzer config'
+    Worker->>VitalAnalyzer: Stores 'analyzer config'
+    VitalAnalyzer->>Discover: Ready to analyze
+    Discover->>NodeCoordinator: Announcement ready to analyze
+    Note over NodeCoordinator: Node Coordinator will send new vitals for analyzing<br> to this node
+    Discover->>NodeCoordinator: Ready to receive Raw data
+    NodeCoordinator->>Worker: Send Raw data
+    Note over NodeCoordinator: newest data first principle
+    Worker->>VitalSignManager: Store Raw data
+    VitalSignManager->>Discover: Raw data finished
+    Discover->>NodeCoordinator: Announcement Node N fully operational
+    Note over Discover: Node N is now ready to take on any role needed
+    
+```
