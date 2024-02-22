@@ -9,6 +9,8 @@
     - Brian de Bruijn (Medior consultant)
     - Jeroen Bezemer (CTO / Principal consultant)
 
+![Team](/Resources/Team.png)
+
 
 ## Table of Contents
 
@@ -20,8 +22,12 @@
 * [Architecture Characteristics](#architecture-characteristics)
   * [Architecture style decision](#architecture-style-decision)
 * [Distributed system with event-driven design](#distributed-system-with-event-driven-architecture) 
-  * [C4 - System design]  
-  * [C4 - Container design]
+* [C4 - System design - MonitorMe]( #c4---system-design)
+    * [C4 - Container design - Coordinator & Monitor](#c4---container-design---based-on-coordinator-role)
+    * [C4 - Container design - Analyzer](#c4---container-design---based-on-analyzer-role)
+    * [C4 - Container design - New Node](#c4---container-design---new-node-auto-configuration-flow)
+* [ADR - Work in Progress](#adr)
+
 
 <!-- TOC -->
 
@@ -398,27 +404,34 @@ Unhealthy system, one appliance in operation
   </tbody>
 </table>
 
-#### C4 - System design
+## C4 - System design
 
 ![Context diagram MonitorMe](/Resources/Context%20Diagram%20MonitorMe.png)
 
 
 
-#### C4 - Container design - Based on Coordinator role
+### C4 - Container design - Based on Coordinator & monitor role
 
-<b>Purpose: </b>
+<b>Purpose: </b> Coordinator distributes vital signs to all nodes for processing according to their role. It also handles the cycling of patients for the Nurses Station subscriptions
+
+<b>Datastores: </b> NurseStation MetaData stores all Patient data and NurseStation subscribers/Bed&Device relations. All data to communicate the right data to the right nurses station
 
 ![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
 
-#### C4 - Container design - Based on Analyzer role
+[!NOTE] Vital analyzer is always storing vital signs (short term) for trend analysis. Left flow out for readability
+
+###### Sequence flow for Coordinator & Monitor is Work in Progress
+
+
+### C4 - Container design - Based on Analyzer role
 
 <b>Purpose: </b> Analyze all vital signs with configured thresholds or stored trend data. 
 
 <b>Datastore 'AnalyzerData': </b> Holds all vital sign tresholds and minimal trend data for analyzing purposes
 
-![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
+![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
 
-##### Analyzer flow
+#### Analyzer flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
 
 ``` mermaid
@@ -430,6 +443,7 @@ sequenceDiagram
     box rgb(200,200,240,0.2) MonitorMe_Node_New
     participant Discover
     participant Worker
+    participant VitalSignManager
     Participant VitalAnalyzer
     Participant PatientCycler
     Participant PushEngine
@@ -439,6 +453,7 @@ sequenceDiagram
     end
 
     NodeCoordinator->>Worker: Send vital sign for role Analyzer
+    Worker->>VitalSignManager: Store vitalsign
     Worker->>VitalAnalyzer: Process vitalsign
     alt isAlert
         VitalAnalyzer->>PatientCycler: Send Anomaly
@@ -451,22 +466,22 @@ sequenceDiagram
     end
 ```
 
-#### Display alert on Nursestation 
+#### Handling alert on Nursestation 
 
 Description: Dashboard is connected through webhooks to MonitorMe, This allows for direct communication from MonitorMe to the Dashboard and instant showing of alerts. 
 
 The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a seperate part of the screen we will reserve room for displaying alerts when they occur. Both are seperate events to keep the logic simple.
 
-###### Mockup?
+###### NursesStation Mockup placeholder (WIP)
     
-#### C4 - Container design - New node Auto-configuration flow
+### C4 - Container design - New node Auto-configuration flow
 
 <b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
 
 
 ![Level 2 MonitorMe NFR role](/Resources/Level%202%20-%20MonitorMe%20Coordinator%20AutoConfig%20flow.png)
 
-##### Auto-configuration sequence flow
+#### Auto-configuration sequence flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
 
 
@@ -506,3 +521,7 @@ sequenceDiagram
     Note over Discover: Node N is now ready to take on any role needed
     
 ```
+
+## ADR
+
+No ADR's created. We had to be creative due to available time
