@@ -25,7 +25,7 @@
 * [C4 - System design - MonitorMe]( #c4---system-design)
     * [C4 - Container design - Coordinator & Monitor](#c4---container-design---based-on-coordinator-role)
     * [C4 - Container design - Analyzer](#c4---container-design---based-on-analyzer-role)
-    * [C4 - Container design - New Node](#c4---container-design---new-node-auto-configuration-flow)
+    * [Auto configuration flow](#auto-configuration-sequence-flow)
 * [ADR - Work in Progress](#adr)
 
 
