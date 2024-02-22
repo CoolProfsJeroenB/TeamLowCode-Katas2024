@@ -43,8 +43,7 @@ StayHealthy, Inc. is a large and highly successful ${\color{red}medical\ softwar
 
 StayHealthy, Inc. is now expanding into the medical monitoring market and needs a ${\color{red}new\ medical\ patient\ monitoring\ system\ for\ hospitals}$ that monitors a patient's vital signs using <u><i>proprietary</i></u> medical monitoring devices built by StayHealthy, Inc.
 
-[!NOTE]
-MonitorMe will be the new medical patient monitoring system for hospitals
+- MonitorMe will be the new medical patient monitoring system for hospitals
 
 ### MonitorMe requirements
 
@@ -190,7 +189,6 @@ Based on the above requirements table we came up with these 7 Driving characteri
 
 ![Architectural Characteristics](/Resources/2024%20CoolProfs%20-%20Architecture%20Katas.jpg)
 
-[!NOTE]
 To ensure 24/7 correct simultaneous analysis of patient vital sign we have chosen Concurrency, Availability and Data Integrity as our top 3 Driving Architecture Characteristics
 
 <table>
@@ -293,6 +291,118 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
   </tr>
   </tbody>
 </table>
+
+### Architecture style decision
+
+For our software architecture we decided on 'Event-Driven'. 
+
+- To support our new line of business and adapt quickly to the market
+- Lower risk of adding additional features to the software
+- To make MonitorMe 24/7 available even when upgrading we had to also think about the hardware architecture. 
+
+Up to this point it was still an assumption we had to make. Once the physical architecture was decided we could evaluate it.
+
+![Architecture style decision](/Resources/Architecture%20styles%20worksheet.jpg)
+
+
+For our physical architecture we decided on the following requirements:
+
+- 24/7 availability
+- On-premise, so no cloud to rely on
+- Easy to install, implement and upgrade
+- No single point of failures within the MonitorMe instance
+- Easily to replace/upgrade without downtime
+- Futureproof, scale out if needed to support additional vital signs monitoring or other requirements that increases load. 
+
+Based on the above we came up with a distributed system, see drawing:
+
+![Distributed system](/Resources/Distributed%20System.jpg)
+
+[!NOTE] Each Node is one MonitorMe appliance
+
+We accepted the additional NFR effort that a distributed system requires, such as:
+
+- Synchronisation / replication
+- Auto discovery
+- Load distribution
+- Auto failover
+
+The latter allows for a possible downsize in the required hardware for the appliance which would benefit our new line of business in this market.
+
+With these features in place we can garantuee the following to our customers:
+
+- MonitorMe will be configured once during installation by a StayHealthy consultant
+- Configuration is auto shared with all discovered MonitorMe appliances
+- Any MonitorMe appliance acts as plug-and-play. In case one fails the other 2 will take over it's role and continue to perform and deliver all functionality
+- In the rare occasion that only 1 MonitorMe appliance is working it will limit its functionality to storing data, analyzing data and alerting. The nurses station will no longer function for the duration that only 1 MonitorMe applicance is active. If there is an alert during this time it will still be recieved by the mobile app.
+- Once a new MonitorMe appliance is pluggedin, the nurses station will automatically recieve patient vital signs again
+- This allows for enough time to replace the faulty MonitorMe appliance. StayHealthy can decide to also have a spare on-site or Same/Next day delivery.
+
+### Distributed system with event-driven architecture
+
+[!NOTE] Node = 1 MonitorMe appliance
+
+One MonitorMe system exists out of a minimum of 3 identical appliances.
+Each appliance will behave based on its assigned role
+For MonitorMe we have these roles:
+
+- Coordinator (non functional role)
+- Monitor (feeding nurses station with patient's vital signs)
+- Analyzer (analyzing vital signs and sending alerts)
+
+<table>
+  <thead>
+    <tr>
+      <th width="500px"> MonitorMe appliances</th>
+      <th width="500px"> Node roles</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>
+Healthy system, all appliances in operation
+  </td>
+  <td>
+
+- Node 1: Coordinator & Monitor
+- Node 2: Analyzer
+- Node 3: Analyzer
+  </td>
+  </tr>
+  <tr>
+  <td>
+Semi-healthy system, one appliance down, 2 in function
+  </td>
+  <td>
+
+- Node 1: Coordinator & Monitor
+- Node 2: Analyzer
+  </td>
+  </tr>
+  <tr>
+  <td>
+Unhealthy system, one appliance in operation
+  </td>
+  <td>
+
+- Node 1: Coordinator & Analyzer
+  </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+
+
 
 
 
