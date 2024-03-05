@@ -7,7 +7,7 @@ informed: Brian
 nav_order: 0
 ---
 
-# Choose architecture conform selected driving characteristics
+# Use Event-Driven architecture
 
 
 ## Context and Problem Statement
