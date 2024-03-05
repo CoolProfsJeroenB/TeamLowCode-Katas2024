@@ -19,6 +19,7 @@ From left to right:
 
 <!-- TOC -->
 * [Welcome](#welcome)
+* [Executive summary](#executive-summary)
 * [Presenting our solution](#solution)
   * [The business problem](#the-business-problem)
   * [MonitorMe requirements](#monitorme-requirements)
@@ -44,6 +45,9 @@ To challenge ourselves and keep on learning we decided to commit our team to the
 We believe that it does not matter if you build software in a high or low-code environment. Architecture is equally important to deliver a good solution. 
 
 In our work, we do not only design it we also build and implement it. To help ourselves and our clients to always have an up-to-date architectural overview of their software landscape we believe in the power of automation. We use [C4 Modeling approach](https://c4model.com/) to design and automatically generate it from code to allow us a continuous comparison between the designed architecture and the realized architecture.
+
+## Executive summary
+slide 34, the why, the what, the how...
 
 ## Solution
 
@@ -344,6 +348,9 @@ We accepted the additional NFR effort that a distributed system requires, such a
 - Load distribution
 - Auto failover
 
+> [!INFO]
+> Link NFRs to driving characteristics 
+
 The latter allows for a possible downsize in the required hardware for the appliance which would benefit our new line of business in this market.
 
 With these features in place we can garantuee the following to our customers:
@@ -352,7 +359,7 @@ With these features in place we can garantuee the following to our customers:
 - Configuration is auto shared with all discovered MonitorMe appliances
 - Any MonitorMe appliance acts as plug-and-play. In case one fails the other 2 will take over it's role and continue to perform and deliver all functionality
 - In the rare occasion that only 1 MonitorMe appliance is working it will limit its functionality to storing data, analyzing data and alerting. The nurses station will no longer function for the duration that only 1 MonitorMe applicance is active. If there is an alert during this time it will still be recieved by the mobile app.
-- Once a new MonitorMe appliance is pluggedin, the nurses station will automatically recieve patient vital signs again
+- Once a new MonitorMe appliance is plugged in, the nurses station will automatically recieve patient vital signs again
 - This allows for enough time to replace the faulty MonitorMe appliance. StayHealthy can decide to also have a spare on-site or Same/Next day delivery.
 
 ### Distributed system with event-driven architecture
