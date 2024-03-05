@@ -314,7 +314,7 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
 
 ## Architecture style decision
 
-For our software architecture we decided on 'Event-Driven'. 
+For our software architecture we decided on 'Event-Driven'. [[ADR-0000]](Docs/Decisions/0000-use-event-driven-architecture.md)
 
 - To support our new line of business and adapt quickly to the market
 - Lower risk of adding additional features to the software
@@ -334,7 +334,7 @@ For our physical architecture we decided on the following requirements:
 - Easily to replace/upgrade without downtime
 - Futureproof, scale out if needed to support additional vital signs monitoring or other requirements that increases load. 
 
-Based on the above we came up with a distributed system, see drawing:
+Based on the above we came up with a distributed system, see drawing [[ADR-0001](Docs/Decisions/0001-use-distributed-systems.md)]:
 
 ![Distributed system](/Resources/Distributed%20System.jpg)
 
@@ -351,7 +351,7 @@ We accepted the additional NFR effort that a distributed system requires, such a
 > [!INFO]
 > Link NFRs to driving characteristics 
 
-The latter allows for a possible downsize in the required hardware for the appliance which would benefit our new line of business in this market.
+The latter allows for a possible downsize in the required hardware for the appliance which would benefit our new line of business in this market. [[ADR-0002]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
 With these features in place we can garantuee the following to our customers:
 
