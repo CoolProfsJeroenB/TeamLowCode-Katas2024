@@ -4,7 +4,7 @@ parent: Decisions
 deciders: Joachim, Job, Shahin, Jeroen
 consulted: Joost
 informed: Brian
-nav_order: 0
+nav_order: 1
 ---
 
 # Use distributed system architecture (hardware)
