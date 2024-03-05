@@ -535,4 +535,7 @@ sequenceDiagram
 
 ## ADR
 
-No ADR's created. We had to be creative due to available time
+[[ADR-0000]](Docs/Decisions/0000-use-event-driven-architecture.md)
+[[ADR-0001](Docs/Decisions/0001-use-distributed-systems.md)]
+[[ADR-0002]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
+
