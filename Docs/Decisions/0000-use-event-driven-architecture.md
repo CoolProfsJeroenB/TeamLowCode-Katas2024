@@ -1,30 +1,51 @@
 ---
+status: accepted
 parent: Decisions
+deciders: Joachim, Job, Shahin, Jeroen
+consulted: Joost
+informed: Brian
 nav_order: 0
 ---
-# Use Event driven architecture
+
+# Choose architecture conform selected driving characteristics
+
 
 ## Context and Problem Statement
 
-We want to record any decisions made in this project independent whether decisions concern the architecture ("architectural decision record"), the code, or other fields.
-Which format and structure should these records follow?
+Which architecture style is the best fit for purpose to realize the MonitorMe requirements and enabling of the StayHealthy inc. business strategy?
+
+<!-- This is an optional element. Feel free to remove. -->
+## Decision Drivers
+
+* Architecture driving characteristics used for decision are:
+    * Concurrency
+    * Availability
+    * Data integrity
+* Relevant style characteristics for our solution are:
+    * Evolvability; to support further growth in additional vital signs
+    * Fault-tolerance; to support failover/high availability
+    * Performance; to support concurrency
 
 ## Considered Options
 
-* [MADR](https://adr.github.io/madr/) 3.0.0 – The Markdown Any Decision Records
-* [Michael Nygard's template](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions) – The first incarnation of the term "ADR"
-* [Sustainable Architectural Decisions](https://www.infoq.com/articles/sustainable-architectural-design-decisions) – The Y-Statements
-* Other templates listed at <https://github.com/joelparkerhenderson/architecture_decision_record>
-* Formless – No conventions for file format and structure
+* Microservices
+* Space-based
+* Event-driven
+
 
 ## Decision Outcome
 
-Chosen option: "MADR 3.0.0", because
+Chosen option: "Event-driven", because:
 
-* Implicit assumptions should be made explicit.
-  Design documentation is important to enable people understanding the decisions later on.
-  See also [A rational design process: How and why to fake it](https://doi.org/10.1109/TSE.1986.6312940).
-* MADR allows for structured capturing of any decision.
-* The MADR format is lean and fits our development style.
-* The MADR structure is comprehensible and facilitates usage & maintenance.
-* The MADR project is vivid.
+All relevant style characteristics scored the best for event-driven. Besides the scoring we also believe this architecture will enable: 
+
+- The support of Stayhealthy inc. new line of business and adapt quickly to the market
+- Lower risk of adding additional features to the software
+
+![Architecture style decision](/Resources/Architecture%20styles%20worksheet.jpg)
+
+<!-- This is an optional element. Feel free to remove. -->
+### Consequences
+
+* To support all features and requirements we also need to choose a appropiate hardware architecture and valid the NFR's.
+
