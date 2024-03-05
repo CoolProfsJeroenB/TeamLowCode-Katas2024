@@ -436,6 +436,136 @@ Unhealthy system, one appliance in operation
 
 ###### Sequence flow for Coordinator & Monitor is Work in Progress
 
+Measurement flow - Work in Progress
+``` mermaid
+sequenceDiagram
+    box rgb(240,240,240,0.2) Measurement_Devices
+     participant Measurement_Devices
+    end
+
+    box rgb(200,200,240,0.2) MonitorMe_Node_A_Coordinator
+    participant Worker
+    participant EventBus
+    Participant MonitorMe_Node_1_Analyzer
+    Participant MonitorMe_Node_2_Analyzer
+    Participant VitalSignManager
+    Participant VitalSigns_Raw_Data
+    
+    end
+
+    Discover->>NodeCoordinator: Announcement new Node
+    NodeCoordinator->>Worker: Send configuration (Appliance config)
+    Worker->>Discover: Applies configuration (Appliance config)
+    Discover->>NodeCoordinator: Announcement ready for sync 'NurseStation Metadata'
+    NodeCoordinator->>Worker: Send 'NurseStation Metadata'
+    Worker->>PatientCycler: Stores 'NurseStation Metadata'
+    PatientCycler->>Discover: Ready to cycle patients
+    Discover->>NodeCoordinator: Announcement ready for sync 'Analyzer config'
+    NodeCoordinator->>Worker: Send 'analyzer config'
+    Worker->>VitalAnalyzer: Stores 'analyzer config'
+    VitalAnalyzer->>Discover: Ready to analyze
+    Discover->>NodeCoordinator: Announcement ready to analyze
+    Note over NodeCoordinator: Node Coordinator will send new vitals for analyzing<br> to this node
+    Discover->>NodeCoordinator: Ready to receive Raw data
+    NodeCoordinator->>Worker: Send Raw data
+    Note over NodeCoordinator: newest data first principle
+    Worker->>VitalSignManager: Store Raw data
+    VitalSignManager->>Discover: Raw data finished
+    Discover->>NodeCoordinator: Announcement Node N fully operational
+    Note over Discover: Node N is now ready to take on any role needed
+    
+```
+
+dashboard flow - Work in Progress
+``` mermaid
+sequenceDiagram
+
+    box rgb(200,200,240,0.2) MonitorMe_Node_A_Monitor
+    Participant PatientCycler
+    participant EventBus
+    Participant VitalSignManager
+    Participant VitalSigns_Raw_Data
+    Participant MonitorMe_Node_1_Analyzer
+    Participant MonitorMe_Node_2_Analyzer
+    Participant Dashboard_Engine
+
+    end
+
+    box rgb(240,240,240,0.2) NurseStation_dashboard
+    Participant NurseStation_dashboard
+
+    end
+
+    Discover->>NodeCoordinator: Announcement new Node
+    NodeCoordinator->>Worker: Send configuration (Appliance config)
+    Worker->>Discover: Applies configuration (Appliance config)
+    Discover->>NodeCoordinator: Announcement ready for sync 'NurseStation Metadata'
+    NodeCoordinator->>Worker: Send 'NurseStation Metadata'
+    Worker->>PatientCycler: Stores 'NurseStation Metadata'
+    PatientCycler->>Discover: Ready to cycle patients
+    Discover->>NodeCoordinator: Announcement ready for sync 'Analyzer config'
+    NodeCoordinator->>Worker: Send 'analyzer config'
+    Worker->>VitalAnalyzer: Stores 'analyzer config'
+    VitalAnalyzer->>Discover: Ready to analyze
+    Discover->>NodeCoordinator: Announcement ready to analyze
+    Note over NodeCoordinator: Node Coordinator will send new vitals for analyzing<br> to this node
+    Discover->>NodeCoordinator: Ready to receive Raw data
+    NodeCoordinator->>Worker: Send Raw data
+    Note over NodeCoordinator: newest data first principle
+    Worker->>VitalSignManager: Store Raw data
+    VitalSignManager->>Discover: Raw data finished
+    Discover->>NodeCoordinator: Announcement Node N fully operational
+    Note over Discover: Node N is now ready to take on any role needed
+    
+```
+
+Snapshow flow - Work in Progress
+``` mermaid
+sequenceDiagram
+
+    box rgb(240,240,240,0.2) NurseStation_dashboard
+    Participant NurseStation_dashboard
+
+    end
+
+
+    box rgb(200,200,240,0.2) MonitorMe_Node_A_Monitor
+    Participant Dashboard_Engine
+    participant EventBus
+    Participant VitalSignManager
+    Participant VitalSigns_Raw_Data
+    Participant Snapshot_engine
+
+    end
+
+    box rgb(240,240,240,0.2) MyMedicalData
+    Participant MyMedicalData
+
+    end
+
+
+    Discover->>NodeCoordinator: Announcement new Node
+    NodeCoordinator->>Worker: Send configuration (Appliance config)
+    Worker->>Discover: Applies configuration (Appliance config)
+    Discover->>NodeCoordinator: Announcement ready for sync 'NurseStation Metadata'
+    NodeCoordinator->>Worker: Send 'NurseStation Metadata'
+    Worker->>PatientCycler: Stores 'NurseStation Metadata'
+    PatientCycler->>Discover: Ready to cycle patients
+    Discover->>NodeCoordinator: Announcement ready for sync 'Analyzer config'
+    NodeCoordinator->>Worker: Send 'analyzer config'
+    Worker->>VitalAnalyzer: Stores 'analyzer config'
+    VitalAnalyzer->>Discover: Ready to analyze
+    Discover->>NodeCoordinator: Announcement ready to analyze
+    Note over NodeCoordinator: Node Coordinator will send new vitals for analyzing<br> to this node
+    Discover->>NodeCoordinator: Ready to receive Raw data
+    NodeCoordinator->>Worker: Send Raw data
+    Note over NodeCoordinator: newest data first principle
+    Worker->>VitalSignManager: Store Raw data
+    VitalSignManager->>Discover: Raw data finished
+    Discover->>NodeCoordinator: Announcement Node N fully operational
+    Note over Discover: Node N is now ready to take on any role needed
+    
+```
 
 ### C4 - Container design - Based on Analyzer role
 
