@@ -30,7 +30,7 @@ From left to right:
     * [C4 - Container design - Coordinator & Monitor](#c4---container-design---based-on-coordinator-role)
     * [C4 - Container design - Analyzer](#c4---container-design---based-on-analyzer-role)
     * [Auto configuration flow](#auto-configuration-sequence-flow)
-* [ADR - Work in Progress](#adr)
+* [ADR](#adr)
 
 
 <!-- TOC -->
@@ -616,7 +616,9 @@ Description: Dashboard is connected through webhooks to MonitorMe, This allows f
 
 The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a seperate part of the screen we will reserve room for displaying alerts when they occur. Both are seperate events to keep the logic simple.
 
-###### NursesStation Mockup placeholder (WIP)
+###### NursesStation Mockup placeholder
+
+We decided not to create a mockup in this phase of architectural discovery. We will create the neccessary mockups to visualize what the end product can look like, once the StayHealthy management board agrees that this is the right direction. A short description of the Nurses station is given [here](#handling-alert-on-nursestation)
     
 ### New node Auto-configuration 
 
@@ -663,9 +665,32 @@ sequenceDiagram
     
 ```
 
+## Solution outcome
+
+Did we meet the requirements of MonitorMe?
+A summary of driving architecture characteristics and how it's solved by the solution
+
+<table>
+  <thead>
+    <tr>
+      <th width="500px"> Driving characteristic</th>
+      <th width="500px"> Solved</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>
+[Concurrency](#architecture-characteristics)
+  </td>
+  <td>
+:heavy_check_mark:
+  </td>
+  </tr>
+
+
 ## ADR
 
-[[ADR-0000]](Docs/Decisions/0000-use-event-driven-architecture.md)
-[[ADR-0001](Docs/Decisions/0001-use-distributed-systems.md)]
-[[ADR-0002]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
+[[ADR-0000 Use event-driven architecture]](Docs/Decisions/0000-use-event-driven-architecture.md)<br>
+[[ADR-0001 Use distributed systems](Docs/Decisions/0001-use-distributed-systems.md)]<br>
+[[ADR-0002 Appropiate appliance sizing]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
