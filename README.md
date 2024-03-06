@@ -723,7 +723,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
 [Data Integrity](#architecture-characteristics)
   </td>
   <td align='center'>
-:heavy_check_mark: [more info](/Docs/outcome/dataintegrity.md)
+[more info](#architecture-style-decision) :heavy_check_mark: 
   </td>
   </tr>
   </tbody>
