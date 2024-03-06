@@ -640,7 +640,7 @@ Description: Dashboard is connected through webhooks to MonitorMe, This allows f
 
 The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a seperate part of the screen we will reserve room for displaying alerts when they occur. Both are seperate events to keep the logic simple.
 
-###### NursesStation Mockup placeholder
+##### NursesStation Mockup 
 
 We decided not to create a mockup in this phase of architectural discovery. We will create the neccessary mockups to visualize what the end product can look like, once the StayHealthy management board agrees that this is the right direction. A short description of the Nurses station is given [here](#handling-alert-on-nursestation)
     
@@ -704,26 +704,36 @@ A summary of driving architecture characteristics and how it's solved by the sol
   <tbody>
   <tr>
   <td>
-[Concurrency](#architecture-characteristics)
+
+[Concurrency](#sequence-flow-for-coordinator--monitor)
   </td>
   <td align='center'>
+
 :heavy_check_mark: [more info](#architecture-style-decision)
   </td>
   </tr>
 <tr>
   <td>
+
 [Availability](#architecture-characteristics)
+
   </td>
   <td align='center'>
+
 :heavy_check_mark: [more info](#architecture-style-decision)
+
   </td>
   </tr>
   <tr>
   <td>
+
 [Data Integrity](#architecture-characteristics)
+
   </td>
   <td align='center'>
-[more info](#architecture-style-decision) :heavy_check_mark: 
+
+:heavy_check_mark: [more info](#measurement-flow---work-in-progress)  
+
   </td>
   </tr>
   </tbody>
@@ -732,6 +742,6 @@ A summary of driving architecture characteristics and how it's solved by the sol
 ## ADR
 
 [[ADR-0000 Use event-driven architecture]](Docs/Decisions/0000-use-event-driven-architecture.md)<br>
-[[ADR-0001 Use distributed systems](Docs/Decisions/0001-use-distributed-systems.md)]<br>
+[[ADR-0001 Use distributed systems]](Docs/Decisions/0001-use-distributed-systems.md)<br>
 [[ADR-0002 Appropiate appliance sizing]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
