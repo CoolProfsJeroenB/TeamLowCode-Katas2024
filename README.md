@@ -689,7 +689,7 @@ sequenceDiagram
     
 ```
 
-## Solution outcome
+## Solution outcome (Work-in=Progress)
 
 Did we meet the requirements of MonitorMe? <br>
 A summary of driving architecture characteristics and how it's solved by the solution <br>
@@ -705,11 +705,11 @@ A summary of driving architecture characteristics and how it's solved by the sol
   <tr>
   <td>
 
-[Concurrency](#sequence-flow-for-coordinator--monitor)
+[Concurrency](#architecture-characteristics)
   </td>
   <td align='center'>
 
-:heavy_check_mark: [more info](#architecture-style-decision)
+:heavy_check_mark: [more info](#sequence-flow-for-coordinator--monitor)
   </td>
   </tr>
 <tr>
@@ -733,6 +733,42 @@ A summary of driving architecture characteristics and how it's solved by the sol
   <td align='center'>
 
 :heavy_check_mark: [more info](#measurement-flow---work-in-progress)  
+
+  </td>
+  </tr>
+    <tr>
+  <td>
+
+[Performance and Responsiveness](#architecture-characteristics)
+
+  </td>
+  <td align='center'>
+
+:heavy_check_mark: <br>
+    - Webhooks ........
+  </td>
+  </tr>
+    <tr>
+  <td>
+
+[Fault tolerance](#architecture-characteristics)
+
+  </td>
+  <td align='center'>
+
+:heavy_check_mark: [more info](#)  
+
+  </td>
+  </tr>
+    <tr>
+  <td>
+
+[Security](#architecture-characteristics)
+
+  </td>
+  <td align='center'>
+
+:heavy_check_mark: [more info](#)  
 
   </td>
   </tr>
