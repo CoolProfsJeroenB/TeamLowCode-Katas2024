@@ -348,12 +348,15 @@ We accepted the additional NFR effort that a distributed system requires, such a
 - Load distribution
 - Auto failover
 
-> [!INFO]
-> Link NFRs to driving characteristics 
+| :memo:        | Distributed systems will garantee [availability](#architecture-characteristics)       |
+|---------------|:---------------------------------------------|
+| Node        | A MonitorMe appliance that will act based on its given role. Roles are explained [here](#distributed-system-with-event-driven-architecture)
+|Failover | Is built into the system so that even with one appliance left the most important functionality (analyzing & alerting) will be operational
+|Synchronisation | Is built into the system to make sure each appliance can take on each role
 
-The latter allows for a possible downsize in the required hardware for the appliance which would benefit our new line of business in this market. [[ADR-0002]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
+A distributed system might allows for a possible downsize in the required hardware for the appliance itself which would benefit our new line of business in this market. [[ADR-0002]](Docs/Decisions/0002-appropiate-appliance-sizing.md). 
 
-With these features in place we can garantuee the following to our customers:
+With these features in place StayHealthy inc. can garantee the following to their customers:
 
 - MonitorMe will be configured once during installation by a StayHealthy consultant
 - Configuration is auto shared with all discovered MonitorMe appliances
@@ -434,9 +437,16 @@ Unhealthy system, one appliance in operation
 > [!NOTE]
 > Vital analyzer is always storing vital signs (short term) for trend analysis. Left flow out for readability
 
-###### Sequence flow for Coordinator & Monitor is Work in Progress
+###### Sequence flow for Coordinator & Monitor 
 
-Measurement flow - Work in Progress
+| :memo:        | Worker & eventBus are maintaining [concurrency](#architecture-characteristics)       |
+|---------------|:---------------------------------------------|
+| Worker        | A multithreading worker that asynchronous processes all incoming vital signs
+| Eventbus| All events can be handled asynchronous and allows for multiple subscribers to same event
+
+
+#### Measurement flow - Work in Progress
+
 ``` mermaid
 sequenceDiagram
     box rgb(240,240,240,0.2) Measurement_Devices
@@ -475,8 +485,22 @@ sequenceDiagram
     Note over Discover: Node N is now ready to take on any role needed
     
 ```
+<br><br>
 
-dashboard flow - Work in Progress
+| :memo:        | Measurement flow will uphold [Data Integrity](#architecture-characteristics)       |
+|---------------|:---------------------------------------------|
+| worker        | Will send the data in it's raw form with the event to be stored
+| VitalSignManager| Stores the raw data in the database for atleast 24h.
+| VitalSigns Raw Data| Holds the raw data of each vital sign for X period of time
+| Analyzer data| Holds the raw data of each vital sign that requires analyzing its trend. This can differ per vital sign. The analyzer will not alter or aggragate this data in any way to uphold it's integrity&consistency.
+|Analyzer| Analysis will always be done on the raw data coming from Analyzer data store, this will garantee all analysis will be accurate and consistent
+
+<br>
+
+
+#### dashboard flow - Work in Progress
+
+
 ``` mermaid
 sequenceDiagram
 
@@ -682,11 +706,26 @@ A summary of driving architecture characteristics and how it's solved by the sol
   <td>
 [Concurrency](#architecture-characteristics)
   </td>
-  <td>
-:heavy_check_mark:
+  <td align='center'>
+:heavy_check_mark: [more info](#architecture-style-decision)
   </td>
   </tr>
-
+<tr>
+  <td>
+[Availability](#architecture-characteristics)
+  </td>
+  <td align='center'>
+:heavy_check_mark: [more info](#architecture-style-decision)
+  </td>
+  </tr>
+  <tr>
+  <td>
+[Data Integrity](#architecture-characteristics)
+  </td>
+  <td align='center'>
+:heavy_check_mark: [more info](/Docs/outcome/dataintegrity.md)
+  </td>
+  </tr>
 
 ## ADR
 
