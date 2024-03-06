@@ -487,13 +487,13 @@ sequenceDiagram
 ```
 <br><br>
 
-| :memo:        | Measurement flow will uphold [Data Integrity](#architecture-characteristics)       |
+| :memo:        | Measurement flow will uphold [Data Integrity](#architecture-characteristics). No alterations will be done to ensure data integrity    |
 |---------------|:---------------------------------------------|
-| worker        | Will send the data in it's raw form with the event to be stored
+| worker        | Will send the data in it's raw form with the event to be stored. 
 | VitalSignManager| Stores the raw data in the database for atleast 24h.
 | VitalSigns Raw Data| Holds the raw data of each vital sign for X period of time
-| Analyzer data| Holds the raw data of each vital sign that requires analyzing its trend. This can differ per vital sign. The analyzer will not alter or aggragate this data in any way to uphold it's integrity&consistency.
-|Analyzer| Analysis will always be done on the raw data coming from Analyzer data store, this will garantee all analysis will be accurate and consistent
+| Analyzer data| Holds the raw data of each vital sign that requires analyzing its trend. This can differ per vital sign. The analyzer will not alter or aggragate this data in any way to uphold it's <b>integrity&consistency</b>.
+|Analyzer| Analysis will always be done on the raw data coming from Analyzer data store, this will garantee all analysis will be <b>accurate and consistent</b>
 
 <br>
 
@@ -726,6 +726,8 @@ A summary of driving architecture characteristics and how it's solved by the sol
 :heavy_check_mark: [more info](/Docs/outcome/dataintegrity.md)
   </td>
   </tr>
+  </tbody>
+  </table>
 
 ## ADR
 
