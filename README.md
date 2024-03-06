@@ -691,8 +691,8 @@ sequenceDiagram
 
 ## Solution outcome
 
-Did we meet the requirements of MonitorMe?
-A summary of driving architecture characteristics and how it's solved by the solution
+Did we meet the requirements of MonitorMe? <br>
+A summary of driving architecture characteristics and how it's solved by the solution <br>
 
 <table>
   <thead>
