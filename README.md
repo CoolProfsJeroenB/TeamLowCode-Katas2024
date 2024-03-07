@@ -431,7 +431,7 @@ We accepted the additional NFR effort that a distributed system requires, such a
 
 | :memo:        | Distributed systems will garantee [availability](#architecture-characteristics)       |
 |---------------|:---------------------------------------------|
-| Node        | A MonitorMe appliance that will act based on its given role. Roles are explained [here](#distributed-system-with-event-driven-architecture)
+| Node        | A MonitorMe appliance that will act based on its given role. Roles are explained [here](#distributed-system-with-event-driven-design)
 |Failover | Is built into the system so that even with one appliance left the most important functionality (analyzing & alerting) will be operational
 |Synchronisation | Is built into the system to make sure each appliance can take on each role
 
