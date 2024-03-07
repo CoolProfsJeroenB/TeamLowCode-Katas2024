@@ -47,7 +47,17 @@ We believe that it does not matter if you build software in a high or low-code e
 In our work, we do not only design it we also build and implement it. To help ourselves and our clients to always have an up-to-date architectural overview of their software landscape we believe in the power of automation. We use [C4 Modeling approach](https://c4model.com/) to design and automatically generate it from code to allow us a continuous comparison between the designed architecture and the realized architecture.
 
 ## Executive summary
-slide 34, the why, the what, the how...
+
+With the new MonitorMe solution StayHealthy will successfully enter into the medical monitoring market. This new patient monitoring systems connects easy to the proprietary vital sign input sources and is fully integrated with current SaaS and Mobile solutions in the StayHealthy ecosystem.   
+
+MonitorMe is build on a solid software and hardware architecture to ensure availability, concurrency, data integrity, performance, fault tolerance, responsiveness and data security of this critical patient monitoring system the hospital nurses, doctors and medical staff.  
+
+An event-driven software architecture combined with a distributed-system hardware architecture covers all relevant constraints and architectural characteristics for the MonitorMe application with 24/7 availablity, no single point of failure, easy on-premises installation and scalability for the future.  
+<br> 
+All vital signs measurements of the patients are stored and analysed in the MonitorMe solution. Medical staff can easily monitor 20 patients on the nurse station dashboards. Relevant alerts based on smart trends and thresholds to medical professionals on the Nurse station and StayHealthy mobile app. And finally holistic measurement snapshots of patients are send secure to MyMedicalData to medical staff.  
+
+Team Low-code is ready to realize the MonitorMe solution for StayHealty Inc.  
+<br><br>
 
 ## Solution
 
