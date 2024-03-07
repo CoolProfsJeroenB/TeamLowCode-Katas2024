@@ -1,6 +1,6 @@
 ---
 status: accepted
-parent: [Decisions](0001-use-distributed-systems.md)
+parent: Decisions
 deciders: Joachim, Job, Shahin, Jeroen
 nav_order: 2
 ---
