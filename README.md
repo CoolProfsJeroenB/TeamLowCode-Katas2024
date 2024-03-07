@@ -505,7 +505,7 @@ Unhealthy system, one appliance in operation
 
 <b>Datastores: </b> NurseStation MetaData stores all Patient data and NurseStation subscribers/Bed&Device relations. All data to communicate the right data to the right nurses station
 
-![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20role%20Coordinator.png)
+![Level 2 MonitorMe Coordinator role](/Resources/Level%202%20-%20MonitorMe%20-%20Coordinator.png)
 
 
 > [!NOTE]
@@ -671,7 +671,7 @@ sequenceDiagram
 
 <b>Datastore 'AnalyzerData': </b> Holds all vital sign thresholds and minimal trend data for analyzing purposes
 
-![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
+![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20-%20Analyzer.png)
 
 #### Analyzer flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
