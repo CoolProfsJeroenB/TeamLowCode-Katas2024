@@ -209,7 +209,7 @@ Based on the above requirements table we came up with these 7 Driving characteri
 
 ![Architectural Characteristics](/Resources/2024%20CoolProfs%20-%20Architecture%20Katas.jpg)
 
-To ensure 24/7 correct simultaneous analysis of patient vital sign we have chosen Concurrency, Availability and Data Integrity as our top 3 Driving Architecture Characteristics
+To ensure 24/7 correct simultaneous analysis of patient vital signs we have chosen Concurrency, Availability and Data Integrity as our top 3 Driving Architecture Characteristics
 
 <table>
   <thead>
