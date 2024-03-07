@@ -772,15 +772,15 @@ Did we meet the requirements of MonitorMe?
 [[ADR-0001 Use distributed systems]](Docs/Decisions/0001-use-distributed-systems.md)<br>
 [[ADR-0002 Appropiate appliance sizing]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
-## Video presentation - Work in progress
+## Video presentation
 
 Team LowCodes video presentation 4 min 59secs without outro
 
-https://youtu.be/rNIhUrgyxT0
+https://youtu.be/dqBvXRlHctI
 
 Team LowCodes video presentation 5 min 17 secs with outro
 
-https://youtu.be/dqBvXRlHctI
+https://youtu.be/rNIhUrgyxT0
 
 
 [Powerpoint presentation used for video](/Resources/Presentation/2024%20CoolProfs%20-%20Video%20Architecture%20Katas%20(FINAL).pptx)
