@@ -431,7 +431,7 @@ We accepted the additional NFR effort that a distributed system requires, such a
 
 | :memo:        | Distributed systems will garantee [availability](#architecture-characteristics)       |
 |---------------|:---------------------------------------------|
-| Node        | A MonitorMe appliance that will act based on its given role. Roles are explained [here](#distributed-system-with-event-driven-architecture)
+| Node        | A MonitorMe appliance that will act based on its given role. Roles are explained [here](#distributed-system-with-event-driven-design)
 |Failover | Is built into the system so that even with one appliance left the most important functionality (analyzing & alerting) will be operational
 |Synchronisation | Is built into the system to make sure each appliance can take on each role
 
@@ -775,11 +775,15 @@ Did we meet the requirements of MonitorMe?
 
 Team LowCodes video presentation 4 min 59secs without outro
 
-https://youtu.be/dqBvXRlHctI
+[![Video presentation 4:59](https://github.com/CoolProfsJeroenB/TeamLowCode-Katas2024/assets/82020897/909e4e8c-1793-4702-be58-1d57b447f797)](https://www.youtube.com/watch?v=dqBvXRlHctI)
+
+
 
 Team LowCodes video presentation 5 min 17 secs with outro
 
-https://youtu.be/rNIhUrgyxT0
+[![Video presentation 5:17 + Outro](https://github.com/CoolProfsJeroenB/TeamLowCode-Katas2024/assets/82020897/e4ed4af8-79b5-451d-9ec7-a236a36ff9ab)](https://www.youtube.com/watch?v=rNIhUrgyxT0)
+
+
 
 
 [Powerpoint presentation used for video](/Resources/Presentation/2024%20CoolProfs%20-%20Video%20Architecture%20Katas%20(FINAL).pptx)
