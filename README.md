@@ -775,11 +775,15 @@ Did we meet the requirements of MonitorMe?
 
 Team LowCodes video presentation 4 min 59secs without outro
 
-https://youtu.be/dqBvXRlHctI
+[![Video presentation 4:59](https://github.com/CoolProfsJeroenB/TeamLowCode-Katas2024/assets/82020897/909e4e8c-1793-4702-be58-1d57b447f797)](https://www.youtube.com/watch?v=dqBvXRlHctI)
+
+
 
 Team LowCodes video presentation 5 min 17 secs with outro
 
-https://youtu.be/rNIhUrgyxT0
+[![Video presentation 5:17 + Outro](https://github.com/CoolProfsJeroenB/TeamLowCode-Katas2024/assets/82020897/e4ed4af8-79b5-451d-9ec7-a236a36ff9ab)](https://www.youtube.com/watch?v=rNIhUrgyxT0)
+
+
 
 
 [Powerpoint presentation used for video](/Resources/Presentation/2024%20CoolProfs%20-%20Video%20Architecture%20Katas%20(FINAL).pptx)
