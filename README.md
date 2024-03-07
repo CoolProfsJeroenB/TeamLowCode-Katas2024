@@ -694,7 +694,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </td>
   <td align='center'>
 
-:heavy_check_mark: [more info](#sequence-flow-for-coordinator--monitor)
+:heavy_check_mark: [more info](#c4---container-design---based-on-coordinator--monitor-role)
   </td>
   </tr>
 <tr>
@@ -717,7 +717,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </td>
   <td align='center'>
 
-:heavy_check_mark: [more info](#measurement-flow---work-in-progress)  
+:heavy_check_mark: [more info](#c4---container-design---based-on-coordinator--monitor-role)  
 
   </td>
   </tr>
