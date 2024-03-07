@@ -1,4 +1,4 @@
-# Team Low-Code Architectural Kata by O'Reilly, February-March 2024
+# Team Low-Code Architectural Katas by O'Reilly, February-March 2024
 
 
 ## Team members
@@ -6,7 +6,7 @@
 From left to right:
 
     - Jeroen Bezemer (CTO / Principal consultant)
-    - Joachim VandeCasteele (Solution Architect / Principal consultant)
+    - Joachim Vandecasteele (Solution Architect / Principal consultant)
     - Shahin Keshavari (Senior consultant)
     - Job Bezemer (Junior consultant)
     - Brian de Bruijn (Medior consultant)
@@ -24,12 +24,15 @@ From left to right:
   * [The business problem](#the-business-problem)
   * [MonitorMe requirements](#monitorme-requirements)
 * [Architecture Characteristics](#architecture-characteristics)
+  * [Others considered](#others-considered)
   * [Architecture style decision](#architecture-style-decision)
 * [Distributed system with event-driven design](#distributed-system-with-event-driven-architecture) 
 * [C4 - System design - MonitorMe]( #c4---system-design)
     * [C4 - Container design - Coordinator & Monitor](#c4---container-design---based-on-coordinator-role)
     * [C4 - Container design - Analyzer](#c4---container-design---based-on-analyzer-role)
     * [Auto configuration flow](#auto-configuration-sequence-flow)
+* [Security](#security)
+* [Solution Outcome](#solution-outcome-work-inprogress)
 * [ADR](#adr)
 
 
@@ -322,6 +325,67 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
   </tbody>
 </table>
 
+### Others considered
+
+<table>
+ <thead>
+ <tr>
+  <th width="200px">Characteristics</th>
+  <th width="500px">Considerations</th>
+</tr>
+</thead>
+<tbody width="600px">
+<tr>
+<td>
+
+Recoverability
+
+</td>
+<td>
+
+To meet the MonitorMe requirements, we need to prevent the possibility of getting into a situation where we need recoverability. Our focus is more on fail-over/high availability. Therefore, we have not included recoverability as one of the driving characteristics.
+
+</td>
+</tr>
+<tr>
+<td>
+
+Abstraction
+
+</td>
+<td>
+
+Abstraction was a factor because it lets users or system components reach their objectives more quickly without having to understand or view every detail. For example, a dashboard that is abstract would show the user the relevant data more easily than a dashboard that has too much data. This would not need any major changes in our architectural solution, which is why it is not listed as a driving characteristic.
+
+</td>
+</tr>
+<tr>
+<td>
+
+Configurability
+
+</td>
+<td>
+
+Configurability has been considered due to StayHealthy expecting a lot of changes since this is a new market for them. We decided that it was not crucial to shape our architectural solution based on this characteristic and so it is not a driving characteristic. 
+
+</td>
+</tr>
+<tr>
+<td>
+
+Data consistency
+
+</td>
+<td>
+
+We did not prioritize Data Consistency, because it is related to Data Integrity, which is already one of our main driving characteristics. We also anticipated a simple data model that would minimize or eliminate Data Inconsistencies, so we did not consider Data Consistency as a key factor.
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Architecture style decision
 
 For our software architecture we decided on 'Event-Driven'. [[ADR-0000]](Docs/Decisions/0000-use-event-driven-architecture.md)
@@ -371,8 +435,8 @@ With these features in place StayHealthy inc. can garantee the following to thei
 - MonitorMe will be configured once during installation by a StayHealthy consultant
 - Configuration is auto shared with all discovered MonitorMe appliances
 - Any MonitorMe appliance acts as plug-and-play. In case one fails the other 2 will take over it's role and continue to perform and deliver all functionality
-- In the rare occasion that only 1 MonitorMe appliance is working it will limit its functionality to storing data, analyzing data and alerting. The nurses station will no longer function for the duration that only 1 MonitorMe applicance is active. If there is an alert during this time it will still be recieved by the mobile app.
-- Once a new MonitorMe appliance is plugged in, the nurses station will automatically recieve patient vital signs again
+- In the rare occasion that only 1 MonitorMe appliance is working it will limit its functionality to storing data, analyzing data and alerting. The nurses station will no longer function for the duration that only 1 MonitorMe applicance is active. If there is an alert during this time it will still be received by the mobile app.
+- Once a new MonitorMe appliance is plugged in, the nurses station will automatically receive patient vital signs again
 - This allows for enough time to replace the faulty MonitorMe appliance. StayHealthy can decide to also have a spare on-site or Same/Next day delivery.
 
 ### Distributed system with event-driven architecture
@@ -500,10 +564,10 @@ sequenceDiagram
 | :memo:        | Measurement flow will uphold [Data Integrity](#architecture-characteristics). No alterations will be done to ensure data integrity    |
 |---------------|:---------------------------------------------|
 | worker        | Will send the data in it's raw form with the event to be stored. 
-| VitalSignManager| Stores the raw data in the database for atleast 24h.
+| VitalSignManager| Stores the raw data in the database for at least 24h.
 | VitalSigns Raw Data| Holds the raw data of each vital sign for X period of time
 | Analyzer data| Holds the raw data of each vital sign that requires analyzing its trend. This can differ per vital sign. The analyzer will not alter or aggragate this data in any way to uphold it's <b>integrity&consistency</b>.
-|Analyzer| Analysis will always be done on the raw data coming from Analyzer data store, this will garantee all analysis will be <b>accurate and consistent</b>
+|Analyzer| Analysis will always be done on the raw data coming from Analyzer data store, this will guarantee all analysis will be <b>accurate and consistent</b>
 
 <br>
 
@@ -605,7 +669,7 @@ sequenceDiagram
 
 <b>Purpose: </b> Analyze all vital signs with configured thresholds or stored trend data. 
 
-<b>Datastore 'AnalyzerData': </b> Holds all vital sign tresholds and minimal trend data for analyzing purposes
+<b>Datastore 'AnalyzerData': </b> Holds all vital sign thresholds and minimal trend data for analyzing purposes
 
 ![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20role%20Analyzer.png)
 
@@ -644,11 +708,11 @@ sequenceDiagram
     end
 ```
 
-#### Handling alert on Nursestation 
+#### Handling alert on NurseStation 
 
 Description: Dashboard is connected through webhooks to MonitorMe, This allows for direct communication from MonitorMe to the Dashboard and instant showing of alerts. 
 
-The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a seperate part of the screen we will reserve room for displaying alerts when they occur. Both are seperate events to keep the logic simple.
+The dashboard is divided in 2 sections, one for showing patient information and vital signs. This will cycle on forever even when alerts appear. In a separate part of the screen we will reserve room for displaying alerts when they occur. Both are separate events to keep the logic simple.
 
 ##### NursesStation Mockup 
 
@@ -698,6 +762,13 @@ sequenceDiagram
     Note over Discover: Node N is now ready to take on any role needed
     
 ```
+
+## Security
+
+The MonitorMe solution respects patient confidentiality. All devices that measure vitalsigns are wired to the MonitorMe solution. All data from patient monitoring is stored on-site at the Hospital. Data from measurements is stored in the AnalyzerData database and VitalSigns Raw Data databases. Patient (identity) data is stored in the encrypted NurseStation MetaData database. 
+
+MonitorMe communicates with the NurseStation, MyMedicalData, StayHealty Mobile app only through secure HTTP API calls. All StayHealthy applications (NurseStation, MyMedicalData and StayHealty Mobile) require a secure login process by verified and authorized hospital medical staff and professionals. 
+
 
 ## Solution outcome (Work-in=Progress)
 
