@@ -727,8 +727,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </td>
   <td align='center'>
 
-:heavy_check_mark: <br>
-    - Webhooks ........
+:heavy_check_mark: [more info](#distributed-system-with-event-driven-design)  
   </td>
   </tr>
     <tr>
@@ -739,7 +738,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </td>
   <td align='center'>
 
-:heavy_check_mark: [more info](#)  
+:heavy_check_mark: [more info](#architecture-style-decision)  
 
   </td>
   </tr>
@@ -751,7 +750,7 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </td>
   <td align='center'>
 
-:heavy_check_mark: [more info](#)  
+:heavy_check_mark: [more info](#security)  
 
   </td>
   </tr>
