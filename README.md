@@ -34,6 +34,8 @@ From left to right:
 * [Security](#security)
 * [Solution Outcome](#solution-outcome-work-inprogress)
 * [ADR](#adr)
+* [Video & presentation sources](#video-presentation---work-in-progress)
+* [The Making Of & Learnings](#the-making-of--learnings-just-a-fun-part)
 
 
 <!-- TOC -->
@@ -868,7 +870,11 @@ Did we meet the requirements of MonitorMe?
 [[ADR-0001 Use distributed systems]](Docs/Decisions/0001-use-distributed-systems.md)<br>
 [[ADR-0002 Appropiate appliance sizing]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
+## Video presentation - Work in progress
 
+insert video here
+
+[Powerpoint presentation used for video](/Resources/Presentation/2024%20CoolProfs%20-%20Video%20Architecture%20Katas%20(FINAL).pptx)
 
 ## "The making of" & Learnings (Just a fun part...)
 
@@ -879,7 +885,7 @@ Team LowCodes working hard to create a video (Take 42!). This is part of the Sci
 ![Making of](/Resources/Making%20of.png)
 Special thanks to our video specialist and colleague: Guido Vandecasteele
 
-We also want to thank the local pizza delivery, we couldn't have done it without! Pizza, cola and Beer our personal driving characteristics!
+We also want to thank the local pizza delivery, we couldn't have done it without! Pizza, Cola and Beer our personal driving characteristics!
 
 ![Pizza](/Resources/pizza.jpg)
 
@@ -894,6 +900,8 @@ What new learnings did we do:
   - Github / Markdown language, again little to no experience. Google and VSCode were our friends in this. Took some time to figure out how to do some basic styling, luckily html is no stranger to us. VSCode helped to keep things simple and sync it to Github. Maybe a few plugins to help you preview it better instead of syncing everytime ;)
   - Take a lot of pictures and just have fun, order pizza or whatever is your fuel to keep on going!
   - Retro your experience, we did that once and will do the last one after the finals. It will help us to look back on what we have accomplished and better yet, how can we use this experience with our current work and give those tips to the next LowCodes team when they enter Katas.
+  - The O'Reilly learning platform, use it! Lots of great books, video's and events to be found on it. You will have free access during the Katas. Badges kept flowing in ;)
+  We will see how we can incorporate this with our Cool Academy team to share the knowledge within our company.
 
 
 
