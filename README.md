@@ -41,6 +41,8 @@ From left to right:
 * [ADR](#adr)
 * [Video & presentation sources](#video-presentation)
 * [The Making Of & Learnings](#the-making-of--learnings-just-a-fun-part)
+  * [Having fun in the R&D room](#having-fun-in-the-rd-room)
+  * [Learning](#learning)
 
 
 <!-- TOC -->
