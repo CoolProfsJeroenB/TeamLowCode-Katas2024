@@ -35,7 +35,6 @@ From left to right:
       * [Handling alert on NurseStation](#handling-alert-on-nursestation)
         * [NurseStation Mockup](#nursesstation-mockup)
     * [Auto configuration flow](#auto-configuration-sequence-flow)
-
 * [Security](#security)
 * [Solution Outcome](#solution-outcome-work-inprogress)
 * [ADR](#adr)
