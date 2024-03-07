@@ -26,11 +26,16 @@ From left to right:
 * [Architecture Characteristics](#architecture-characteristics)
   * [Others considered](#others-considered)
   * [Architecture style decision](#architecture-style-decision)
-* [Distributed system with event-driven design](#distributed-system-with-event-driven-architecture) 
-* [C4 - System design - MonitorMe]( #c4---system-design)
+* [Distributed system with event-driven design](#distributed-system-with-event-driven-design) 
+* [C4 - System design - MonitorMe]( #c4---system-design-monitorme)
     * [C4 - Container design - Coordinator & Monitor](#c4---container-design---based-on-coordinator-role)
+      * [Dashboard sequence flow](#dashboard-sequence-flow)
     * [C4 - Container design - Analyzer](#c4---container-design---based-on-analyzer-role)
+      * [Analyzer sequence flow](#analyzer-sequence-flow)
+      * [Handling alert on NurseStation](#handling-alert-on-nursestation)
+        * [NurseStation Mockup](#nursesstation-mockup)
     * [Auto configuration flow](#auto-configuration-sequence-flow)
+
 * [Security](#security)
 * [Solution Outcome](#solution-outcome-work-inprogress)
 * [ADR](#adr)
@@ -229,8 +234,8 @@ To ensure 24/7 correct simultaneous analysis of patient vital signs we have chos
 <table>
   <thead>
     <tr>
-      <th width="500px"> Driving characteristics</th>
-      <th width="500px">Justification</th>
+      <th width="300px"> Driving characteristics</th>
+      <th width="600px">Justification</th>
     </tr>
   </thead>
   <tbody>
@@ -333,11 +338,11 @@ MonitorMe will be receiving a lot of data for every vital sign from the patients
  <thead>
  <tr>
   <th width="200px">Characteristics</th>
-  <th width="500px">Considerations</th>
+  <th width="600px">Considerations</th>
 </tr>
 </thead>
-<tbody width="600px">
-<tr>
+<tbody>
+<tr width="600px">
 <td>
 
 Recoverability
@@ -441,7 +446,7 @@ With these features in place StayHealthy inc. can garantee the following to thei
 - Once a new MonitorMe appliance is plugged in, the nurses station will automatically receive patient vital signs again
 - This allows for enough time to replace the faulty MonitorMe appliance. StayHealthy can decide to also have a spare on-site or Same/Next day delivery.
 
-### Distributed system with event-driven architecture
+### Distributed system with event-driven design
 
 > [!NOTE] 
 > Node = 1 MonitorMe appliance
@@ -495,7 +500,7 @@ Unhealthy system, one appliance in operation
   </tbody>
 </table>
 
-## C4 - System design
+## C4 - System design - MonitorMe
 
 ![Context diagram MonitorMe](/Resources/Context%20Diagram%20MonitorMe.png)
 
@@ -512,8 +517,6 @@ Unhealthy system, one appliance in operation
 
 > [!NOTE]
 > Vital analyzer is always storing vital signs (short term) for trend analysis. Left flow out for readability
-
-###### Sequence flow for Coordinator & Monitor 
 
 | :memo:        | Worker & eventBus are maintaining [concurrency](#architecture-characteristics)       |
 |---------------|:---------------------------------------------|
@@ -534,7 +537,7 @@ Unhealthy system, one appliance in operation
 <br>
 
 
-#### Dashboard flow
+#### Dashboard sequence flow
 
 
 ``` mermaid
@@ -574,7 +577,7 @@ sequenceDiagram
 
 ![level 2 MonitorMe Analyzer role](/Resources/Level%202%20-%20MonitorMe%20-%20Analyzer.png)
 
-#### Analyzer flow
+#### Analyzer sequence flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
 
 ``` mermaid
