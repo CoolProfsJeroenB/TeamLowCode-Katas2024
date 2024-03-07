@@ -870,7 +870,7 @@ Did we meet the requirements of MonitorMe?
 
 
 
-## "The making of" & Learnings
+## "The making of" & Learnings (Just a fun part...)
 
 ### Having fun in the R&D room
 
@@ -882,3 +882,18 @@ Special thanks to our video specialist and colleague: Guido Vandecasteele
 We also want to thank the local pizza delivery, we couldn't have done it without! Pizza, cola and Beer our personal driving characteristics!
 
 ![Pizza](/Resources/pizza.jpg)
+
+
+### Learning
+
+We had a blast and learned a lot. We also found out that 4-8 hours for this assigned, at least for us, was nowhere near enough. We didn't mind since it's a great challenge. It did mean that we had to do a lot of long evenings. So try to keep some days free from work and see this as a great learning experience and teambuilding effort, am sure your company will not mind.
+
+What new learnings did we do:
+
+  - ADR's, no experience with them at all. We had hours and hours of discussions and made decisions, but did not immediately write them down. Try to read up about the ADR structure and start recording your decisions from the start. Now that we have gotten some experience with them I am sure we will start using them. They are great for those moments where you have to explain the Why.....few months later.
+  - Github / Markdown language, again little to no experience. Google and VSCode were our friends in this. Took some time to figure out how to do some basic styling, luckily html is no stranger to us. VSCode helped to keep things simple and sync it to Github. Maybe a few plugins to help you preview it better instead of syncing everytime ;)
+  - Take a lot of pictures and just have fun, order pizza or whatever is your fuel to keep on going!
+  - Retro your experience, we did that once and will do the last one after the finals. It will help us to look back on what we have accomplished and better yet, how can we use this experience with our current work and give those tips to the next LowCodes team when they enter Katas.
+
+
+
