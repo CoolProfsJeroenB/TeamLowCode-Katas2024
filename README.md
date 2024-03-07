@@ -410,7 +410,7 @@ For our physical architecture we decided on the following requirements:
 
 Based on the above we came up with a distributed system, see drawing [[ADR-0001](Docs/Decisions/0001-use-distributed-systems.md)]:
 
-![Distributed system](/Resources/Distributed%20System.jpg)
+![Distributed system](/Resources/Distributed-systems-MonitorMe.png)
 
 > [!NOTE]
 > Each Node is one MonitorMe appliance
