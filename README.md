@@ -37,9 +37,9 @@ From left to right:
     * [New node Auto-configuration](#new-node-auto-configuration)
       * [Auto-configuration sequence flow](#auto-configuration-sequence-flow)
 * [Security](#security)
-* [Solution Outcome](#solution-outcome-work-inprogress)
+* [Solution Outcome](#solution-outcome)
 * [ADR](#adr)
-* [Video & presentation sources](#video-presentation---work-in-progress)
+* [Video & presentation sources](#video-presentation)
 * [The Making Of & Learnings](#the-making-of--learnings-just-a-fun-part)
 
 
