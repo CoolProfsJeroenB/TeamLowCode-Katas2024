@@ -810,6 +810,7 @@ What new learnings did we do:
   - Retro your experience, we did that once and will do the last one after the finals. It will help us to look back on what we have accomplished and better yet, how can we use this experience with our current work and give those tips to the next LowCodes team when they enter Katas.
   - The O'Reilly learning platform, use it! Lots of great books, video's and events to be found on it. You will have free access during the Katas. Badges kept flowing in ;)
   We will see how we can incorporate this with our Cool Academy team to share the knowledge within our company.
+  - Github doesn't support files larger then 25mb, so don't expect your videopresentation to be hosted on github. We used wetransfer to send it to the judges (hoping that works and is accepted). As a fail-safe we also uploaded them to youtube and added the links in the [video presentation](#video-presentation) section
 
 
 
