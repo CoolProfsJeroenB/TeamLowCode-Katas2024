@@ -770,9 +770,7 @@ The MonitorMe solution respects patient confidentiality. All devices that measur
 MonitorMe communicates with the NurseStation, MyMedicalData, StayHealty Mobile app only through secure HTTP API calls. All StayHealthy applications (NurseStation, MyMedicalData and StayHealty Mobile) require a secure login process by verified and authorized hospital medical staff and professionals. 
 
 
-## Solution outcome (Work-in=Progress)
-
-Did we meet the requirements of MonitorMe? <br>
+## Solution outcome
 A summary of driving architecture characteristics and how it's solved by the solution <br>
 
 <table>
@@ -856,9 +854,31 @@ A summary of driving architecture characteristics and how it's solved by the sol
   </tbody>
   </table>
 
+ <br><br>
+
+
+Did we meet the requirements of MonitorMe?
+![MonitorMe Requirements met](/Resources/MonitorMe-requirements-met.png)
+<br>
+<h3>Yes we did!</h3>
+
 ## ADR
 
 [[ADR-0000 Use event-driven architecture]](Docs/Decisions/0000-use-event-driven-architecture.md)<br>
 [[ADR-0001 Use distributed systems]](Docs/Decisions/0001-use-distributed-systems.md)<br>
 [[ADR-0002 Appropiate appliance sizing]](Docs/Decisions/0002-appropiate-appliance-sizing.md)
 
+
+
+## "The making of" & Learnings
+
+### Having fun in the R&D room
+
+Team LowCodes working hard to create a video (Take 42!). This is part of the Science room (R&D) where all the magic happens
+
+![Making of](/Resources/Making%20of.png)
+Special thanks to our video specialist and colleague: Guido Vandecasteele
+
+We also want to thank the local pizza delivery, we couldn't have done it without! Pizza, cola and Beer our personal driving characteristics!
+
+![Pizza](/Resources/pizza.jpg)
