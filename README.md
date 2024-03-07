@@ -1,4 +1,4 @@
-# Team Low-Code Architectural Katas by O'Reilly, February-March 2024
+ Team Low-Code Architectural Katas by O'Reilly, February-March 2024
 
 
 ## Team members
@@ -34,7 +34,8 @@ From left to right:
       * [Analyzer sequence flow](#analyzer-sequence-flow)
       * [Handling alert on NurseStation](#handling-alert-on-nursestation)
         * [NurseStation Mockup](#nursesstation-mockup)
-    * [Auto configuration flow](#auto-configuration-sequence-flow)
+    * [New node Auto-configuration](#new-node-auto-configuration)
+      * [Auto-configuration sequence flow](#auto-configuration-sequence-flow)
 * [Security](#security)
 * [Solution Outcome](#solution-outcome-work-inprogress)
 * [ADR](#adr)
@@ -625,7 +626,7 @@ We decided not to create a mockup in this phase of architectural discovery. We w
 
 <b>Purpose: </b> To support easy installation of new appliances. Just replace the faulty appliance or add this appliance in the same rack. Once connected to the network and poweredOn it will make itself part of the distributed system
 
-##### Auto-configuration sequence flow
+#### Auto-configuration sequence flow
 For readability we left the event bus out of the sequence flow. Assume all communication goes through the Event BUS
 
 
@@ -773,7 +774,10 @@ Did we meet the requirements of MonitorMe?
 
 ## Video presentation - Work in progress
 
-insert video here
+<video src="https://youtu.be/rNIhUrgyxT0">Team LowCodes video presentation 4 min 59secs without outro  </video>
+
+<video src="https://youtu.be/dqBvXRlHctI">Team LowCodes video presentation 5 min 17 secs with outro </video> 
+
 
 [Powerpoint presentation used for video](/Resources/Presentation/2024%20CoolProfs%20-%20Video%20Architecture%20Katas%20(FINAL).pptx)
 
